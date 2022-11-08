@@ -15,7 +15,7 @@ export default () => {
       <img id="home-icon" data-action="home" class="icons-size" src="./external/svg/home-icon.svg"/>
       <img id="menu-icon" data-action="menu" class="icons-size" src="./external/svg/menu-icon.svg"/>
       <img id="logout-icon" data-action="logout" class="icons-size" src="./external/svg/log-out-icon.svg"/>
-      <a href="#novo_post"><img id="plus-icon" class="icons-size" src="./external/svg/plus-icon.svg"/></a>
+      <img id="plus-icon" data-action="new" class="icons-size" src="./external/svg/plus-icon.svg"/>
       <img id="up-icon" data-action="up" class="icons-size" src="./external/svg/chevron-up-icon.svg"/>
     </nav>
 
@@ -29,7 +29,7 @@ export default () => {
       <section class="post-container"></section>
     </div>      
     <nav id="mobile-footer-icons" class="icons-container">
-      <a href="#novo_post"><img id="plus-icon" class="icons-size" src="./external/svg/plus-icon.svg"/></a>
+      <img id="plus-icon" data-action="new" class="icons-size" src="./external/svg/plus-icon.svg"/>
       <img id="plate-icon" data-action="plate" class="icons-size" src="./external/svg/logo.svg"/>
       <img id="up-icon" data-action="up" class="icons-size" src="./external/svg/chevron-up-icon.svg"/>
     </nav>
@@ -49,6 +49,10 @@ export default () => {
           break;
         case 'up':
           window.scrollTo(0, 0);
+          break;
+        case 'new':
+          console.log('oi');
+          window.location.hash = '#novo_post';
           break;
         default:
           // eslint-disable-next-line no-console
