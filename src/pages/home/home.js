@@ -51,7 +51,6 @@ export default () => {
           window.scrollTo(0, 0);
           break;
         case 'new':
-          console.log('oi');
           window.location.hash = '#novo_post';
           break;
         default:
