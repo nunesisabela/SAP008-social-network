@@ -17,8 +17,8 @@ export default () => {
                   <input type="password" id="password" name="password" class="form-input" placeholder="Senha"><br>
                   <input type="password" id="confirm-password" name="confirm-password" class="form-input" placeholder="Confirme sua senha"><br>
                   <div class="error-container">
-                    <button id="ok-form-btn">OK</button>
                     <p class="error-msg" id="error-msg"></p>
+                    <button id="ok-form-btn">OK</button>
                   </div>
                 </form>
               <a href="/#" class="instructions cta">Cancelar</a>
