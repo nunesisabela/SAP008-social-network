@@ -2,8 +2,7 @@ import load from './pages/load/load.js';
 import login from './pages/login/login.js';
 import signin from './pages/signin/signin.js';
 import home from './pages/home/home.js';
-// eslint-disable-next-line camelcase
-import new_post from './pages/new_post/new_post.js';
+import newpost from './pages/newpost/newpost.js';
 
 const main = document.querySelector('#root');
 
@@ -29,7 +28,7 @@ const init = () => {
       main.appendChild(homeContainer);
       break;
     case '#novo_post':
-      main.appendChild(new_post());
+      main.appendChild(newpost());
       break;
     default:
       main.appendChild(load());

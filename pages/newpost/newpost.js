@@ -2,7 +2,7 @@ import { create, auth } from '../../lib/auth.js';
 
 // eslint-disable-next-line consistent-return
 export default () => {
-  if (auth.currentUser === null) {
+  if (!auth.currentUser) {
     window.location.hash = '#entrar';
   } else {
     const container = document.createElement('div');
