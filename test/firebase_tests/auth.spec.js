@@ -115,3 +115,12 @@ describe('likePost', () => {
     expect(updateDoc).toHaveBeenCalledTimes(2);
   });
 });
+
+describe('getPosts', () => {
+  it('should get posts from dataBase', () => {
+    getDocs.mockResolvedValue([]);
+    getPosts();
+    expect(getDocs).toHaveBeenCalledTimes(1);
+    expect(collection).toHaveBeenCalledTimes(2);
+  });
+});

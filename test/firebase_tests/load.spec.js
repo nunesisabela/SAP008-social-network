@@ -1,6 +1,7 @@
 /**
  * @jest-environment jsdom
  */
+import { googleAccess } from '../../src/lib/auth.js';
 import load from '../../src/pages/load/load.js';
 
 jest.mock('../../src/lib/firebase.js');
@@ -22,5 +23,6 @@ describe('load', () => {
     const googleBtn = container.querySelector('#google-login');
     const event = new Event('click');
     googleBtn.dispatchEvent(event);
+    expect(googleAccess).toHaveBeenCalledTimes(1);
   });
 });
