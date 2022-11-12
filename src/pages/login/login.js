@@ -29,7 +29,7 @@ export default () => {
             <p class="error-msg" id="error-msg"></p>
           </div>
             </form>
-        <p class="instructions">Não tem uma conta?<a id="first-page" class="cta"href="/#cadastre-se"> Cadastre-se</a></p>
+        <p class="instructions">Não tem uma conta?<button id="signin">Cadastre-se</button></p>
       </div>
       <div class="logo">
         <img class="logo" alt="logo prato rachado BatePrato" src="./external/svg/logotipo.svg"/>
@@ -43,6 +43,11 @@ export default () => {
     const logInPassword = container.querySelector('#password');
     const loginBtn = container.querySelector('#ok-login-btn');
     const pErrorMsg = container.querySelector('#error-msg');
+    const signin = container.querySelector('#signin');
+
+    signin.addEventListener('click', () => {
+      window.location.hash = '#cadastre-se';
+    });
 
     googleBtn.addEventListener('click', () => {
       googleAccess().then(() => {

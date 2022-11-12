@@ -131,6 +131,25 @@ input {
   border: none;
   font-size: .99em;
   cursor: pointer;
+  text-decoration: underline;
+}
+
+#signin {
+  background-color: transparent;
+  color:  #ab6930;
+  border: none;
+  font-size: .99em;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#cancel {
+  background-color: transparent;
+  color:  #ab6930;
+  border: none;
+  font-size: .7em;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 768px) {

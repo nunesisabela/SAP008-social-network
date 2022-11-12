@@ -16,7 +16,7 @@ export default () => {
             <hr style="margin-left: 5%">
           </div>
 
-          <a href="/#cadastre-se"><button id="email-signin-btn" class="solid-border-btn">Inscreva-se com e-mail</button></a>    
+          <button id="email-signin-btn" class="solid-border-btn">Inscreva-se com e-mail</button>    
           <p class="instructions">Já tem uma conta?<button class="enter">Entrar</button></p>
         </div>
         <div class="logo">
@@ -27,6 +27,11 @@ export default () => {
 
   const googleBtn = container.querySelector('#google-login');
   const enterLogin = container.querySelector('.enter');
+  const signin = container.querySelector('#email-signin-btn');
+
+  signin.addEventListener('click', () => {
+    window.location.hash = '#cadastre-se';
+  });
 
   enterLogin.addEventListener('click', () => {
     window.location.hash = '#entrar';
