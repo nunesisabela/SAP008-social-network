@@ -21,7 +21,7 @@ export default () => {
                     <button id="ok-form-btn">OK</button>
                   </div>
                 </form>
-              <a href="/#" class="instructions cta">Cancelar</a>
+              <button id="cancel">Cancelar</button>
             </div>
         </div>
         <div class="logo">
@@ -37,6 +37,11 @@ export default () => {
     const signInConfPassword = container.querySelector('#confirm-password');
     const formRegister = container.querySelector('.form-register');
     const pErrorMsg = container.querySelector('#error-msg');
+    const cancel = container.querySelector('#cancel');
+
+    cancel.addEventListener('click', () => {
+      window.location.hash = '#entrar';
+    });
 
     // eslint-disable-next-line consistent-return
     formRegister.addEventListener('submit', (e) => {
