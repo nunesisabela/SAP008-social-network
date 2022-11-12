@@ -17,7 +17,7 @@ export default () => {
           </div>
 
           <a href="/#cadastre-se"><button id="email-signin-btn" class="solid-border-btn">Inscreva-se com e-mail</button></a>    
-          <p class="instructions">Já tem uma conta? <a href="/#entrar" class="cta">Entrar</a></p>
+          <p class="instructions">Já tem uma conta?<button class="enter">Entrar</button></p>
         </div>
         <div class="logo">
           <img class="logo" alt="logo prato rachado BatePrato" src="./external/svg/logotipo.svg"/>
@@ -26,6 +26,11 @@ export default () => {
   container.innerHTML = template;
 
   const googleBtn = container.querySelector('#google-login');
+  const enterLogin = container.querySelector('.enter');
+
+  enterLogin.addEventListener('click', () => {
+    window.location.hash = '#entrar';
+  });
 
   googleBtn.addEventListener('click', () => {
     googleAccess().then(() => {

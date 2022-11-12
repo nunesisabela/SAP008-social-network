@@ -113,6 +113,15 @@ describe('likePost', () => {
 
     await likePost(postID, userID);
     expect(updateDoc).toHaveBeenCalledTimes(2);
+    expect(updateDoc).toHaveBeenCalledWith(
+      {},
+      {},
+      {
+        like: [
+          'user id',
+        ],
+      },
+    );
   });
 });
 
