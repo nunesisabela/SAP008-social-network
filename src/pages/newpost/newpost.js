@@ -31,8 +31,8 @@ export default () => {
 
         <textarea id="review" placeholder="Escreva sua crítica"></textarea>
         
-        <a href="/#home" class="cancel-btn-new-post">Cancelar</a>
-        <a href="/#home" class="post-btn-new-post">Publicar</a>
+        <button class="cancel-btn-new-post">Cancelar</button>
+        <button class="post-btn-new-post">Publicar</button>
       </form>
 
       <nav id="mobile-footer-icons" class="icons-container">
@@ -47,9 +47,15 @@ export default () => {
     const adress = container.querySelector('#adress');
     const review = container.querySelector('#review');
     const publishBtn = container.querySelector('.post-btn-new-post');
+    const cancelPost = container.querySelector('.cancel-btn-new-post');
 
     publishBtn.addEventListener('click', () => {
       create(local.value, adress.value, review.value);
+      window.location.hash = '#home';
+    });
+
+    cancelPost.addEventListener('click', () => {
+      window.location.hash = '#home';
     });
     return container;
   }
