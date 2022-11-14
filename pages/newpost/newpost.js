@@ -31,8 +31,8 @@ export default () => {
 
         <textarea id="review" placeholder="Escreva sua crítica"></textarea>
         
-        <button class="cancel-btn-new-post">Cancelar</button>
-        <button class="post-btn-new-post">Publicar</button>
+        <button data-action="publish" class="cancel-btn-new-post">Publicar</button>
+        <button data-action="cancel" class="post-btn-new-post">Cancelar</button>
       </form>
 
       <nav id="mobile-footer-icons" class="icons-container">
@@ -43,20 +43,40 @@ export default () => {
     </section>`;
     container.innerHTML = template;
 
-    const local = container.querySelector('#local');
-    const adress = container.querySelector('#adress');
-    const review = container.querySelector('#review');
-    const publishBtn = container.querySelector('.post-btn-new-post');
-    const cancelPost = container.querySelector('.cancel-btn-new-post');
+    const newPost = container.querySelector('.container');
+    newPost.addEventListener('click', (event) => {
+      event.preventDefault();
+      const newElement = event.target;
+      const actions = newElement.dataset.action;
+      const local = container.querySelector('#local');
+      const adress = container.querySelector('#adress');
+      const review = container.querySelector('#review');
 
-    publishBtn.addEventListener('click', () => {
-      create(local.value, adress.value, review.value);
-      window.location.hash = '#home';
+      switch (actions) {
+        case 'publish':
+          create(local.value, adress.value, review.value).then(() => {
+            window.location.hash = '#home';
+          });
+          break;
+        case 'cancel':
+          window.location.hash = '#home';
+          break;
+        default:
+          console.log();
+      }
     });
 
-    cancelPost.addEventListener('click', () => {
-      window.location.hash = '#home';
-    });
     return container;
   }
 };
+// const publishBtn = container.querySelector('.post-btn-new-post');
+// const cancelPost = container.querySelector('.cancel-btn-new-post');
+
+// publishBtn.addEventListener('click', () => {
+// create(local.value, adress.value, review.value);
+// window.location.hash = '#home';
+// });
+
+// cancelPost.addEventListener('click', () => {
+// window.location.hash = '#home';
+// });
