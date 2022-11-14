@@ -149,6 +149,7 @@ export default () => {
     });
     return container;
   }
+  window.location.hash = '#load';
 };
 
 function generatePostsTemplate(allPosts) {
