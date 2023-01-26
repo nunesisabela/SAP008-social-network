@@ -62,7 +62,7 @@ export default () => {
           window.location.hash = '#home';
           break;
         default:
-          console.log();
+          // console.log();
       }
     });
 
